@@ -1,0 +1,63 @@
+{
+  "name": "pokedex-clean-architecture",
+  "version": "1.0.0",
+  "description": "A Pokedex API built to learn and practice Clean Architecture step by step.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "start:dev": "tsx watch src/main/index.ts",
+    "build": "tsup",
+    "lint:fix": "biome format --write",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:unit": "vitest run --exclude src/e2e/**",
+    "test:integration": "vitest run src/e2e",
+    "test:staged": "vitest run --passWithNoTests",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cortelucas/pokedex-clean-architecture.git"
+  },
+  "keywords": [
+    "pokedex",
+    "api",
+    "clean",
+    "architecture",
+    "nodejs",
+    "typescript",
+    "fastify",
+    "prisma"
+  ],
+  "author": "cortelucas",
+  "license": "MIT",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/cortelucas/pokedex-clean-architecture/issues"
+  },
+  "homepage": "https://github.com/cortelucas/pokedex-clean-architecture#readme",
+  "devDependencies": {
+    "@biomejs/biome": "2.5.2",
+    "@types/node": "^26.1.0",
+    "@vitest/coverage-v8": "^4.1.10",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.8",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.10"
+  },
+  "allowScripts": {
+    "esbuild@0.27.7": true,
+    "esbuild@0.28.1": true
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "npm run lint:fix"
+    ],
+    "*.{test,spec}.{ts,tsx}": [
+      "vitest run --passWithNoTests"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"lib": [
+			"es2025",
+			"ESNext.Array",
+			"ESNext.Collection",
+			"ESNext.Error",
+			"ESNext.Iterator",
+			"ESNext.Promise"
+		],
+		"module": "nodenext",
+		"target": "es2025",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"moduleResolution": "node16",
+		"outDir": "dist",
+		"sourceMap": true,
+		"rootDir": ".",
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["src/*"],
+			"@tests/*": ["tests/*"]
+		},
+		"ignoreDeprecations": "6.0"
+	},
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}
